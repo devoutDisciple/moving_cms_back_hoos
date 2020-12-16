@@ -4,6 +4,7 @@ const webpackBaseConfig = require('./webpack.base.config');
 const webpackDevConfig = {
 	devtool: 'eval-cheap-module-source-map',
 	mode: 'development',
+	cache: true,
 
 	devServer: {
 		contentBase: path.join(__dirname, '../dist'),
@@ -13,9 +14,10 @@ const webpackDevConfig = {
 		hot: true,
 		hotOnly: true,
 		open: true,
+		clientLogLevel: 'none',
 		proxy: {
 			'/api': {
-				target: 'http://localhost:3000',
+				target: 'http://localhost:8080',
 				changeOrigin: true,
 				pathRewrite: { '^/api': '' },
 			},

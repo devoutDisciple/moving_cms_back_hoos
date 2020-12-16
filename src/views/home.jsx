@@ -9,7 +9,7 @@ export default () => {
 
 	return (
 		<div className={styles.helloworld}>
-			<span style={{ color: 'red' }}>{count}</span>
+			<span>{count}</span>
 			<Button type="primary" onClick={() => setCount(count + 1)}>
 				点击
 			</Button>

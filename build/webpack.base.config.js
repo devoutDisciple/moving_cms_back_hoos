@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -96,6 +97,7 @@ module.exports = (mode) => {
 				'@utils': path.resolve(__dirname, '../src/utils'),
 				'@config': path.resolve(__dirname, '../src/config'),
 				'@service': path.resolve(__dirname, '../src/service'),
+				'@store': path.resolve(__dirname, '../src/store'),
 			},
 		},
 		plugins: [
@@ -106,6 +108,7 @@ module.exports = (mode) => {
 				hash: true,
 				minify: true,
 			}),
+			new webpack.NoEmitOnErrorsPlugin(), // 允许js出错不中断服务
 		],
 	};
 };

@@ -15,14 +15,16 @@
         "@hooks/*": ["src/hooks/*"],
         "@redux": ["src/redux"],
         "@redux/*": ["src/redux/*"],
-        "@services": ["src/services"],
-        "@services/*": ["src/services/*"],
+        "@service": ["src/service"],
+        "@service/*": ["src/service/*"],
         "@static": ["src/static"],
         "@static/*": ["src/static/*"],
         "@utils": ["src/utils"],
         "@utils/*": ["src/utils/*"],
         "@views": ["src/views"],
-        "@views/*": ["src/views/*"]
+        "@views/*": ["src/views/*"],
+        "@store": ["src/store"],
+        "@store/*": ["src/store/*"]
       }
     }
   }

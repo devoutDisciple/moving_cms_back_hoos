@@ -7,8 +7,10 @@
       "newLine": "lf",
       "outDir": "dist",
       "paths": {
-        "@components": ["src/components"],
-        "@components/*": ["src/components/*"],
+        "@component": ["src/component"],
+        "@component/*": ["src/component/*"],
+        "@asserts": ["src/asserts"],
+        "@asserts/*": ["src/asserts/*"],
         "@config": ["src/config"],
         "@config/*": ["src/config/*"],
         "@hooks": ["src/hooks"],

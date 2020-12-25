@@ -43,8 +43,8 @@ Axios.interceptors.response.use(
 		const { hash } = window.location;
 		// 用户没有登录或者登录超时
 		if (data.code === 401 && hash !== '/login') {
-			message.warning('请重新登录');
-			window.location.hash = '/login';
+			// message.warning('请重新登录');
+			// window.location.hash = '/login';
 			return Promise.reject('请重新登录');
 		}
 		// 高德地图的请求

@@ -87,10 +87,20 @@ module.exports = (mode) => {
 					exclude: /(node_modules|bower_components)/,
 					use: [...commonLessLoad],
 				},
+				{
+					test: /\.(png|jpg|gif)$/,
+					exclude: /(node_modules|bower_components)/,
+					use: {
+						loader: 'file-loader',
+						options: {
+							name: '[path][name].[ext]',
+						},
+					},
+				},
 			],
 		},
 		resolve: {
-			extensions: ['.js', '.jsx', '.less', '.css', '.json'],
+			extensions: ['.jsx', '.js', '.less', '.css', '.json'],
 			alias: {
 				'@component': path.resolve(__dirname, '../src/component'),
 				'@views': path.resolve(__dirname, '../src/views'),
@@ -98,6 +108,7 @@ module.exports = (mode) => {
 				'@config': path.resolve(__dirname, '../src/config'),
 				'@service': path.resolve(__dirname, '../src/service'),
 				'@store': path.resolve(__dirname, '../src/store'),
+				'@asserts': path.resolve(__dirname, '../src/asserts'),
 			},
 		},
 		plugins: [

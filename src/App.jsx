@@ -1,23 +1,28 @@
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { getLoginFunc } from '@store/action';
+import React, { useEffect, lazy, Suspense } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import Home from '@views/home/index';
-import Login from '@views/login';
+import { useDispatch } from 'react-redux';
+import { getLoginFunc } from '@store/action';
+import Loading from '@component/GlobalLoading';
+import { message } from 'antd';
+import router from './router';
 
 export default () => {
-	const user = useSelector((state) => state.user);
+	const dispatch = useDispatch();
 	useEffect(() => {
-		console.log(user, 222);
-		getLoginFunc();
-	}, []);
+		message.config({ top: 100, duration: 2, maxCount: 1 });
+		// 获取用户是否登录
+		// dispatch(getLoginFunc());
+	}, [dispatch]);
 
 	return (
 		<HashRouter>
-			<Switch>
-				<Route path="/home" component={Home} />
-				<Route path="/login" component={Login} />
-			</Switch>
+			<Suspense fallback={<Loading />}>
+				<Switch>
+					{router.rootRouter.map((item) => (
+						<Route key={item.key} path={item.path} component={lazy(item.components)} />
+					))}
+				</Switch>
+			</Suspense>
 		</HashRouter>
 	);
 };

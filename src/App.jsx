@@ -1,10 +1,10 @@
 import React, { useEffect, lazy, Suspense } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { getLoginFunc } from '@store/action';
+// import { getLoginFunc } from '@store/action';
 import Loading from '@component/GlobalLoading';
 import { message } from 'antd';
-import router from './router';
+import router from '@router/router';
 
 export default () => {
 	const dispatch = useDispatch();

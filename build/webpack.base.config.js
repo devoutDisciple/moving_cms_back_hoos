@@ -109,6 +109,7 @@ module.exports = (mode) => {
 				'@service': path.resolve(__dirname, '../src/service'),
 				'@store': path.resolve(__dirname, '../src/store'),
 				'@asserts': path.resolve(__dirname, '../src/asserts'),
+				'@router': path.resolve(__dirname, '../src/router'),
 			},
 		},
 		plugins: [

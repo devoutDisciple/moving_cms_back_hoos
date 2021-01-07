@@ -1,11 +1,11 @@
 import React, { lazy, Suspense } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import { Spin } from 'antd';
+import router from '@router/router';
 import styles from './index.less';
 import Menu from './Menu/index';
 import Header from './Header';
 import Footer from './Footer';
-import router from '../../router';
 
 const ContentSpin = () => (
 	<div className={styles.right_suspense}>

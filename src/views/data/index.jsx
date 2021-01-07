@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default () => {
-	console.log(11);
+	useEffect(() => {
+		const a = 23;
+		console.log(a);
+		console.log(1111);
+	}, []);
 	return <div>data</div>;
 };

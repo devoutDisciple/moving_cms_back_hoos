@@ -1,5 +1,5 @@
 import React, { useEffect, lazy, Suspense } from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 // import { getLoginFunc } from '@store/action';
 import Loading from '@component/GlobalLoading';
@@ -21,6 +21,7 @@ export default () => {
 					{router.rootRouter.map((item) => (
 						<Route key={item.key} path={item.path} component={lazy(item.components)} />
 					))}
+					<Redirect key="root" to={{ pathname: '/home/data' }} />
 				</Switch>
 			</Suspense>
 		</HashRouter>
